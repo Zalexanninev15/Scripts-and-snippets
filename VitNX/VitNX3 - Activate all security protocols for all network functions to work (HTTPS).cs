@@ -1,0 +1,1 @@
+ServicePointManager.SecurityProtocol = VitNX3.Functions.Web.Config.UseProtocols();

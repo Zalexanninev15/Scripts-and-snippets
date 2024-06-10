@@ -1,0 +1,30 @@
+# Set proxy settings if behind an enterprise proxy by using these in PS profile
+[system.net.webrequest]::defaultwebproxy = new-object system.net.webproxy('http://proxy:port')
+[system.net.webrequest]::defaultwebproxy.credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
+[system.net.webrequest]::defaultwebproxy.BypassProxyOnLocal = $true
+
+# Set proxy settings for git
+git config --global https.proxy http://username:password@proxy:port
+git config --global http.sslVerify false
+
+# Type the command to install Chocolatey
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+# Install starter packages
+# Baselines first
+choco install dotnetfx, dotnetcore-sdk, powershell, openjdk, jre8, python, 
+
+#windows 7 only
+choco install openssh
+
+# Utilities next
+choco install veracrypt, virtualclonedrive, putty.install, 7zip.install, sysinternals, cmder, ffmpeg, everything, rufus, speccy, unchecky, teracopy, bulk-crap-uninstaller
+
+# Network & dev utilities
+choco install nmap, nxlog, wireshark, llvm,  cygwin, msys2,
+
+# Daily software
+choco install adobereader, googlechrome, firefoxesr, vlc, k-litecodecpackfull, calibre, telegram.install, f.lux, imageglass
+
+# Development tools at last
+choco install git.install, git-lfs, git-credential-manager-for-windows, sublimetext3, vscode, visualstudio2017community, sql-server-management-studio, dotpeek, vagrant, vault, docker
