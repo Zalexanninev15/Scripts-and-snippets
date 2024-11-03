@@ -1,0 +1,6 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: Xiaopi0.powershelldownloadscripts
+    command: 'echo "TODO: Replace with command to start project"'
