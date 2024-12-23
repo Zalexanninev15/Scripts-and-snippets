@@ -55,6 +55,29 @@
 # Для всех:
 # New-SmbShare -Name "SharedFolder" -Path $folderPath -FullAccess Everyone
 
+
+# # # Конфигурация компьютера -> Политики -> Административные шаблоны -> Система -> Вход в систему
+
+# # # 2. Блокировка доступа к реестру для непривилегированных пользователей
+
+# # # Конфигурация компьютера -> Политики -> Административные шаблоны -> Компоненты Windows -> Политики автозапуска
+# # # 3. Блокировка автозапуска USB
+
+# # # Рабочий стол в админ. шаб. в конф. польз.
+# # # 4. Скрыть Управление в Корзине
+
+# # # Рабочий стол в админ. шаб. в конф. польз.
+# # # 5. Скрыть команду Управление из контекстного меню проводника
+
+# # # Рабочий стол в админ. шаб. в конф. польз.
+# # # 6. Отключение пунктов Управление и Свойства в контекстном меню проводника
+
+# # # Рабочий стол в админ. шаб. в конф. польз.
+# # # 7. Скрыть Компьютер
+
+# # # Рабочий стол в админ. шаб. в конф. польз.
+# # # 8. Скрыть корзину
+
 $Global:SystemConfig = @{
     AdminName = "Администратор"
     AdminPassword = "1"
@@ -106,8 +129,8 @@ function Show-MainMenu {
     Write-Host "3. Создать подразделения (OU)"
     Write-Host "4. Создать компьютеры"
 	Write-Host "N. Internet Explorer (IIS)"
-    Write-Host "5. Групповые политики (не доделано)"
-    Write-Host "W. Чтобы показать в Сети (Службы)"
+    # Write-Host "5. Групповые политики (не доделано)"
+    Write-Host "5. Чтобы показать в Сети (Службы)"
     Write-Host "6. Установить остальные компоненты"
     Write-Host "T. Резервирование Windows 10 (DHCP) и Сервер времени (NTP) [?]"
     Write-Host "7. Перезагрузка системы"
@@ -439,7 +462,7 @@ function Create-OrganizationalUnits {
     #    }
     #} while ($ouName -ne 'done')
     for ($i = 1; $i -le $orgsNum; $i++) {
-        $unitName = "Unit$($i)"
+        $unitName = "Подразделение $($i)"
         New-ADOrganizationalUnit -Name $unitName -Path "DC=$($domainParts[0]),DC=$($domainParts[1])"
 
         # Убрать флаг защиты от удаления
@@ -499,95 +522,63 @@ function Open-IE {
 
 }
 
-function Configure-GroupPolicies {
-    Clear-Host
-    Write-Host "===== Настройка групповых политик =====" -ForegroundColor Green
+# function Configure-GroupPolicies {
+    # Clear-Host
+    # Write-Host "===== Настройка групповых политик =====" -ForegroundColor Green
     
-	Write-Host "1. Отключение анимации при первом входе пользователей в систему"
-    write-host "2. Блокировка доступа к реестру для непривилегированных пользователей"
-    write-host "3. Блокировка автозапуска USB"
-    write-host "4. Скрыть Управление в Корзине"
-    write-host "5. Скрыть команду Управление из контекстного меню проводника (ярлык Этот компьютер на рабочем столе)"
-    write-host "6. Отключение пунктов Управление (то же что и 5 пункте) и Свойства (когда открываешь этот компьютер будет такой пункт для перехода в свойства системы) в контекстном меню проводника"
-    write-host "7. Скрыть Компьютер на рабочем столе"
-    write-host "8. Скрыть корзину на рабочем столе"
+	# Write-Host "1. Отключение анимации при первом входе пользователей в систему"
+    # write-host "2. Блокировка доступа к реестру для непривилегированных пользователей"
+    # write-host "3. Блокировка автозапуска USB"
+    # write-host "4. Скрыть Управление в Корзине"
+    # write-host "5. Скрыть команду Управление из контекстного меню проводника (ярлык Этот компьютер на рабочем столе)"
+    # write-host "6. Отключение пунктов Управление (то же что и 5 пункте) и Свойства (когда открываешь этот компьютер будет такой пункт для перехода в свойства системы) в контекстном меню проводника"
+    # write-host "7. Скрыть Компьютер на рабочем столе"
+    # write-host "8. Скрыть корзину на рабочем столе"
 
-    $choice = Read-Host "Выберите политики (через запятую)"
+    # $choice = Read-Host "Выберите политики (через запятую)"
     
-    $Global:SystemConfig.GroupPolicies.gp1 = $choice -contains "1"
-    $Global:SystemConfig.GroupPolicies.gp2 = $choice -contains "2"
-    $Global:SystemConfig.GroupPolicies.gp3 = $choice -contains "3"
-    $Global:SystemConfig.GroupPolicies.gp4 = $choice -contains "4"
-    $Global:SystemConfig.GroupPolicies.gp5 = $choice -contains "5"
-    $Global:SystemConfig.GroupPolicies.gp6 = $choice -contains "6"
-    $Global:SystemConfig.GroupPolicies.gp7 = $choice -contains "7"
-    $Global:SystemConfig.GroupPolicies.gp8 = $choice -contains "8"
+    # $Global:SystemConfig.GroupPolicies.gp1 = $choice -contains "1"
+    # $Global:SystemConfig.GroupPolicies.gp2 = $choice -contains "2"
+    # $Global:SystemConfig.GroupPolicies.gp3 = $choice -contains "3"
+    # $Global:SystemConfig.GroupPolicies.gp4 = $choice -contains "4"
+    # $Global:SystemConfig.GroupPolicies.gp5 = $choice -contains "5"
+    # $Global:SystemConfig.GroupPolicies.gp6 = $choice -contains "6"
+    # $Global:SystemConfig.GroupPolicies.gp7 = $choice -contains "7"
+    # $Global:SystemConfig.GroupPolicies.gp8 = $choice -contains "8"
    
-    Import-Module GroupPolicy
-    $gpoName = "Ограничения"
-    $gpo = New-GPO -Name $gpoName -Domain $Global:SystemConfig.DomainName
+    # Import-Module GroupPolicy
+    # $gpoName = "Ограничения"
+    # $gpo = New-GPO -Name $gpoName -Domain $Global:SystemConfig.DomainName
 
-    # # Конфигурация компьютера -> Политики -> Административные шаблоны -> Система -> Вход в систему
-# Set-GPORegistrySetting -KeyPath "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -ValueName "EnableFirstLogonAnimation" -Type Dword -Value 0
+    # # Отключение анимации при первом входе
+    # Set-GPRegistryValue -Name $gpoName -Key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -ValueName "EnableFirstLogonAnimation" -Type DWord -Value 0
 
-# # 2. Блокировка доступа к реестру для непривилегированных пользователей
-# Set-GPORegistrySetting -KeyPath "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" -ValueName "DisableRegistryTools" -Type Dword -Value 0
+    # # 2. Блокировка доступа к реестру
+    # Set-GPRegistryValue -Name $gpoName -Key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" -ValueName "DisableRegistryTools" -Type DWord -Value 1
 
+    # # 3. Блокировка автозапуска USB
+    # Set-GPRegistryValue -Name $gpoName -Key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoAutorun" -Type DWord -Value 1
+    # Set-GPRegistryValue -Name $gpoName -Key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoDriveTypeAutoRun" -Type DWord -Value 255
 
-# # Конфигурация компьютера -> Политики -> Административные шаблоны -> Компоненты Windows -> Политики автозапуска
-# # 3. Блокировка автозапуска USB
-# Set-GPORegistrySetting -KeyPath "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoDriveTypeAutoRun" -Type Dword -Value 0
+    # # 4. Скрыть Управление в Корзине
+    # Set-GPRegistryValue -Name $gpoName -Key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoPropertiesRecycleBin" -Type Dword -Value 0
 
-# # Рабочий стол в админ. шаб. в конф. польз.
-# # 4. Скрыть Управление в Корзине
-# Set-GPORegistrySetting -KeyPath "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoPropertiesRecycleBin" -Type Dword -Value 0
+    # # 5-6. Отключение Управление и Свойства в контекстном меню
+    # #Set-GPRegistryValue -Name $gpoName -Key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "DisableAdminPage" -Type DWord -Value 1
+    # #Set-GPRegistryValue -Name $gpoName -Key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoPropertiesMyComputer" -Type DWord -Value 1
 
-# # Рабочий стол в админ. шаб. в конф. польз.
-# # 5. Скрыть команду Управление из контекстного меню проводника
-# Set-GPORegistrySetting -KeyPath "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoManageMyComputerVerb" -Type Dword -Value 0
+    # # 7. Скрыть Компьютер на рабочем столе
+     # Set-GPORegistrySetting -Name $gpoName -Ke "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\NonEnum" -ValueName "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" -Type Dword -Value 1
 
-# # Рабочий стол в админ. шаб. в конф. польз.
-# # 6. Отключение пунктов Управление и Свойства в контекстном меню проводника
-# Set-GPORegistrySetting -KeyPath "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoViewContextMenu" -Type Dword -Value 0
-
-# # Рабочий стол в админ. шаб. в конф. польз.
-# # 7. Скрыть Компьютер
-# Set-GPORegistrySetting -KeyPath "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\NonEnum" -ValueName "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" -Type Dword -Value 0
-
-# # Рабочий стол в админ. шаб. в конф. польз.
-# # 8. Скрыть корзину
-# Set-GPORegistrySetting -KeyPath "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\NonEnum" -ValueName "{645FF040-5081-101B-9F08-00AA002F954E}" -Type Dword -Value 0
-
-
-    # Отключение анимации при первом входе
-    Set-GPRegistryValue -Name $gpoName -Key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" -ValueName "EnableFirstLogonAnimation" -Type DWord -Value 0
-
-    # 2. Блокировка доступа к реестру
-    Set-GPRegistryValue -Name $gpoName -Key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System" -ValueName "DisableRegistryTools" -Type DWord -Value 1
-
-    # 3. Блокировка автозапуска USB
-    Set-GPRegistryValue -Name $gpoName -Key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoAutorun" -Type DWord -Value 1
-    Set-GPRegistryValue -Name $gpoName -Key "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoDriveTypeAutoRun" -Type DWord -Value 255
-
-    # 4. Скрыть Управление в Корзине
-    Set-GPRegistryValue -Name $gpoName -Key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoPropertiesRecycleBin" -Type Dword -Value 0
-
-    # 5-6. Отключение Управление и Свойства в контекстном меню
-    #Set-GPRegistryValue -Name $gpoName -Key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "DisableAdminPage" -Type DWord -Value 1
-    #Set-GPRegistryValue -Name $gpoName -Key "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoPropertiesMyComputer" -Type DWord -Value 1
-
-    # 7. Скрыть Компьютер на рабочем столе
-     Set-GPORegistrySetting -Name $gpoName -Ke "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\NonEnum" -ValueName "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" -Type Dword -Value 1
-
-    # 8. Скрыть корзину на рабочем столе
-    Set-GPORegistrySetting -Name $gpoName -Ke "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\NonEnum" -ValueName "{645FF040-5081-101B-9F08-00AA002F954E}" -Type Dword -Value 1
+    # # 8. Скрыть корзину на рабочем столе
+    # Set-GPORegistrySetting -Name $gpoName -Ke "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\NonEnum" -ValueName "{645FF040-5081-101B-9F08-00AA002F954E}" -Type Dword -Value 1
    
-    $ou = "OU=Clients,DC=$($Global:SystemConfig.DomainName.Split('.')[0]),DC=$($Global:SystemConfig.DomainName.Split('.')[1])"
-    New-GPLink -Name $gpoName -Target $ou
-    gpupdate /force
-    Write-Host "Групповая политика настроена только для клиентских компьютеров" -ForegroundColor Green
-    Pause
-}
+    # $ou = "OU=Clients,DC=$($Global:SystemConfig.DomainName.Split('.')[0]),DC=$($Global:SystemConfig.DomainName.Split('.')[1])"
+    # New-GPLink -Name $gpoName -Target $ou
+    # gpupdate /force
+    # Write-Host "Групповая политика настроена только для клиентских компьютеров" -ForegroundColor Green
+    # Pause
+# }
 
 # Главный цикл меню
 function Start-Menu {
@@ -608,8 +599,8 @@ function Start-Menu {
             "3" { Create-OrganizationalUnits }
             "4" { Create-PC }
 			"N" { Open-IE }
-            "5" { Configure-GroupPolicies }
-            "W" { Show-in-Network }
+            # "5" { Configure-GroupPolicies }
+            "5" { Show-in-Network }
             "6" { Install-Others }
             "7" { Restart-Computer -Force }
             "8" { Change-Time }
