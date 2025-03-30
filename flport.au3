@@ -1,3 +1,6 @@
+; Portable Launcher for Flameshot [Full Portable]
+; The “-n” argument allows you to forcibly disable settings backup. Use this argument only if Flameshot is not used in “portable” + “normal” format, because it will avoid possible problems if an error occurs somewhere.
+
 #include <FileConstants.au3>
 
 Global $AppDataDir = @AppDataDir & "\flameshot"
