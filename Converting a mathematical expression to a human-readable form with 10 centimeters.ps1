@@ -1,4 +1,6 @@
-﻿function Evaluate-ExpressionInParentheses {
+# I created a new script when doing coursework (it helps a lot when forming examples and calculating values in several types)
+ 
+ function Evaluate-ExpressionInParentheses {
     param (
         [string]$expression
     )
