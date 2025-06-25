@@ -1,0 +1,198 @@
+{
+	"workbench.colorCustomizations": {
+		"editor.lineHighlightBackground": "#1073cf2d",
+		"editor.lineHighlightBorder": "#9fced11f"
+	},
+	"editor.inlayHints.enabled": "off",
+	"editor.wordWrap": "off",
+	// "editor.wordWrap": "bounded"
+	"diffEditor.wordWrap": "off",
+	"editor.guides.indentation": false,
+	"editor.guides.bracketPairs": "active",
+	// "editor.guides.bracketPairs": false,
+	"workbench.cloudChanges.autoResume": "off",
+	"workbench.enableExperiments": false,
+	"update.mode": "none",
+	"workbench.editorAssociations": {
+		"{hexdiff}:/**/*.*": "hexEditor.hexedit",
+		"*.md": "default",
+		"*.xlsx": "gc-excelviewer-excel-editor"
+	},
+	"update.showReleaseNotes": false,
+	"git.openRepositoryInParentFolders": "never",
+	"codeium.enableConfig": {
+		"*": true,
+		"py": true,
+		"toml": true,
+		"rs": true,
+		"code-runner-output": true,
+		"markdown": true
+	},
+	"errorLens.lintFilePaths": {
+		"eslint": ["**/*.eslintrc.{js,cjs,yaml,yml,json}", "**/*package.json"],
+		"Stylelint": [
+			"**/*.stylelintrc",
+			"**/*.stylelintrc.{cjs,js,json,yaml,yml}",
+			"**/*stylelint.config.{cjs,js}",
+			"**/*package.json"
+		]
+	},
+	"markdown-pdf.displayHeaderFooter": false,
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"codeium.enableSearch": true,
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	"tabnine.experimentalAutoImports": true,
+	"emmet.triggerExpansionOnTab": true,
+	"telepost.authorName": "Ghostman",
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[python]": {
+		"editor.formatOnType": true,
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "ms-python.autopep8"
+	},
+	"svelte.enable-ts-plugin": true,
+	"markdown-preview-github-styles.darkTheme": "dark_tritanopia",
+	"markdown-preview-github-styles.colorTheme": "dark",
+	"vsc-github-trending.languages": [
+		"rust",
+		"csharp",
+		"python",
+		"html",
+		"css",
+		"javascript"
+	],
+	"[rust]": {
+		"editor.defaultFormatter": "jinxdash.prettier-rust"
+	},
+	"files.associations": {
+		"*.dbclient-js": "javascript",
+		"*.sqlbook": "sql",
+		"*.ndjson": "jsonl",
+		".env*": "dotenv",
+		"*.yrf": "json",
+		"*.rpx": "xml"
+	},
+	"editor.tokenColorCustomizations": {
+		"[*Light*]": {
+			"textMateRules": [
+				{
+					"scope": "ref.matchtext",
+					"settings": {
+						"foreground": "#000"
+					}
+				}
+			]
+		},
+		"[*Dark*]": {
+			"textMateRules": [
+				{
+					"scope": "ref.matchtext",
+					"settings": {
+						"foreground": "#fff"
+					}
+				}
+			]
+		},
+		"textMateRules": []
+	},
+	"security.workspace.trust.untrustedFiles": "open",
+	"dotenv.enableAutocloaking": false,
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"security.workspace.trust.startupPrompt": "never",
+	"workbench.startupEditor": "none",
+	"security.workspace.trust.banner": "never",
+	"security.workspace.trust.enabled": false,
+	"editor.cursorBlinking": "smooth",
+	"sonarlint.rules": {
+		"Web:UnsupportedTagsInHtml5Check": {
+			"level": "off"
+		},
+		"Web:TableWithoutCaptionCheck": {
+			"level": "off"
+		},
+		"Web:AvoidCommentedOutCodeCheck": {
+			"level": "off"
+		}
+	},
+	"cSpell.language": "en,ru",
+	"editor.linkedEditing": true,
+	"[css]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	},
+	"editor.quickSuggestions": {
+		"other": true,
+		"comments": false,
+		"strings": false
+	},
+	"telemetry.telemetryLevel": "all", // but only form Codeium, def: off or crash
+	"files.autoSave": "afterDelay",
+	"editor.bracketPairColorization.enabled": true,
+	"editor.smoothScrolling": false,
+	"extensions.ignoreRecommendations": true,
+	"terminal.integrated.cursorStyle": "line",
+	"terminal.integrated.cursorBlinking": true,
+	"editor.fontSize": 13.3,
+	// "window.commandCenter": false,
+	"workbench.productIconTheme": "fluent-icons",
+	"workbench.iconTheme": "office-material-icon-theme",
+	"editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+	"workbench.colorTheme": "Dracula Theme",
+	// "rust-analyzer.completion.privateEditable.enable": true,
+	"explorer.autoReveal": false,
+	"explorer.compactFolders": false,
+	"blockman.n04ColorComboPreset": "Classic Dark 1 (Solid colors)",
+	"blockman.n35A01DisableRecommendationDialog": true,
+	"blockman.n23AnalyzeSquareBrackets": true,
+	"blockman.n30TimeToWaitBeforeRerenderAfterLastScrollEvent": 0.12,
+	"sonarlint.focusOnNewCode": false,
+	"terminal.explorerKind": "external",
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": true,
+	"editor.suggestSelection": "first",
+	"editor.suggest.preview": true,
+	"editor.minimap.enabled": false,
+	"explorer.confirmDelete": false,
+	"prettier.useTabs": true,
+	"prettier.semi": false,
+	"prettier.jsxSingleQuote": true,
+	"prettier.singleQuote": true,
+	"prettier.arrowParens": "avoid",
+	"editor.minimap.renderCharacters": false,
+	"editor.tabCompletion": "on",
+	"diffEditor.codeLens": true,
+	"vs-browser.localProxyServer.cookieDomainRewrite": true,
+	"vs-browser.reload.onSave": true,
+	"vs-browser.showMessageDialog": true,
+	"extensions.autoUpdate": "onlyEnabledExtensions",
+	"sonarlint.disableTelemetry": true, // scoop
+	"MutableAI.autocomplete.acceptLineByLine": true,
+	"redhat.telemetry.enabled": false, // false
+	"settingsSync.ignoredSettings": ["-sonarlint.pathToNodeExecutable"],
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.diagnosticMode": "workspace",
+	"vscode-pets.petColor": "black",
+	"chatgpt.lang": "en",
+	"editor.stickyScroll.enabled": false,
+	"database-client.autoSync": true,
+	"geminicodeassist.project": "refreshing-rune-431510-m7",
+	"editor.inlineSuggest.showToolbar": "always",
+	"telemetry.feedback.enabled": false,
+	"chat.commandCenter.enabled": false,
+	"chat.extensionTools.enabled": false,
+	"chat.focusWindowOnConfirmation": false,
+	"[markdown]": {
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+	}
+	// "autoit.aiPath": "D:\\Portable AutoIt3\\AutoIt3.exe"
+}
