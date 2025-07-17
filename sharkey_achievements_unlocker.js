@@ -1,7 +1,7 @@
 // Разблокируем ачивки в Sharkey (Misskey)
 
 // Шаг 0
-// Идём сюда: https://shitpost.poridge.club/api-console
+// Идём сюда: https://shitpost.poridge.club/api-console (или на другом инстанте в консольку)
 // В endpoint вставляем: i/claim-achievement
 // Нажимаем F12
  
