@@ -181,6 +181,12 @@
 	"settingsSync.ignoredSettings": ["-sonarlint.pathToNodeExecutable"],
 	"python.analysis.autoImportCompletions": true,
 	"python.analysis.diagnosticMode": "workspace",
+	/* "python.analysis.extraPaths": ["C:\\Python312\\Lib\\site-packages"],
+	"redHatDependencyAnalytics.python.executable.path": "C:\\Python312\\python.exe",
+	"redHatDependencyAnalytics.python3.executable.path": "C:\\Python312\\python.exe",
+	"redHatDependencyAnalytics.pip3.executable.path": "C:\\Python312\\Scripts\\pip3.exe",
+	"redHatDependencyAnalytics.pip.executable.path": "C:\\Python312\\Scripts\\pip.exe",
+	"redHatDependencyAnalytics.npm.executable.path": "C:\\Users\\max\\scoop\\apps\\nodejs\\22.3.0\\npm.bat", */
 	"vscode-pets.petColor": "black",
 	"chatgpt.lang": "en",
 	"editor.stickyScroll.enabled": false,
@@ -193,6 +199,12 @@
 	"chat.focusWindowOnConfirmation": false,
 	"[markdown]": {
 		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+	},
+	"oneDarkPro.bold": true,
+	"markdownlint.config": {
+		"MD033": false,
+		"MD045": false,
+		"MD026": false
 	}
 	// "autoit.aiPath": "D:\\Portable AutoIt3\\AutoIt3.exe"
 }
